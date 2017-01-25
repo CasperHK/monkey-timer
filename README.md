@@ -16,8 +16,8 @@ import (
 
 ```go
 timer := NewTimer()
-timer.SetTime(12, 30)
-timer.SetAlarm(2, 45, func() {
+timer.SetTime(`12:15`)
+timer.SetAlarm(`2:45`, func() {
 
 })
 timer.SetPeriodAction(0.5, timer.Second, func() {

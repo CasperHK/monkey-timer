@@ -4,18 +4,18 @@
 
 ## Installation
 ```bash
-go get github.com/CasperHK/monkey-timer
+go get github.com/CasperHK/mtimer
 ```
 <br/>
 ## Usage
 ```go
 import (
-    timer "github.com/CasperHK/monkey-timer"
+    timer "github.com/CasperHK/mtimer"
 )
 ```
 
 ```go
-timer := NewTimer()
+timer := mtimer.NewTimer()
 timer.SetTime(`12:15`)
 timer.SetAlarm(`2:45`, func() {
 

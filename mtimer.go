@@ -8,6 +8,7 @@ import (
 func main() {
     fmt.Println("Hello World")
     t := NewTimer()
+    t.SetTime(5, 26, 30)
     t.Start()
     t.DisplayTime(true)
     time.Sleep(3000 * time.Millisecond)
@@ -25,6 +26,8 @@ type Timer struct {
 	seconds, minutes, hours int
 	flagChan chan bool
 	displayTime bool  // whether display time on console
+	periodAction []func()
+	momentAction []func()
 }
 
 
@@ -60,7 +63,6 @@ func clockTick(t *Timer) {
 			t.hours++
 		}
 
-
 		// declaring flag
 		var isStop bool
 
@@ -92,6 +94,13 @@ func (t *Timer) Reset() {
 	t.seconds = 0 
 	t.minutes = 0 
 	t.hours   = 0 
+}
+
+// set the timer of the timer
+func (t *Timer) SetTime(hour, minute, second int) {
+	t.hours   = hour 
+	t.minutes = minute
+	t.seconds = second
 }
 
 // configure the timer to display the timer on console or not

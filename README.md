@@ -29,3 +29,4 @@ timer.Stop()
 ```
 <br/>
 ## License
+This Go package is under **Apache License V2.0**.
